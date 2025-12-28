@@ -28,6 +28,8 @@ router.get('/books/all',jwtMiddleware,bookController.getUserAllBoookPageControll
 router.get('/user-books/all',jwtMiddleware,bookController.getUserUploadBookProfilePageController)
 // get single book page
 router.get('/books/:id/view',jwtMiddleware,bookController.viewBookController)
+// user edit - request body content is formdata
+router.put('/user/:id/edit',jwtMiddleware,multerMiddleware.single('picture'),userController.updateUserProfileController)
 
 
 module.exports = router 
